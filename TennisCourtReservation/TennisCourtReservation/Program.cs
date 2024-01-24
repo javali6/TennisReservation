@@ -14,8 +14,9 @@ namespace TennisCourtReservation
             ApplicationConfiguration.Initialize();
             if (!TennisCourtReservationContext.Instance.Database.CanConnect())
                 throw new Exception("Can't connect to Database");
-
-            Application.Run(new Form1());
+            
+            TennisCourtReservationContext context = TennisCourtReservationContext.Instance;
+            Application.Run(new Form1(context));
 
         }
     }
